@@ -1,38 +1,186 @@
+:root {
+  --color-primary: rgb(200, 200, 0);
+  --color-primary-middle: rgb(235, 235, 0);
+  --color-primary-max: yellow;
+  --color-primary-transparent: rgba(200, 200, 0, 0.75);
+
+  --color-secondary: rgb(15, 15, 20);
+  --color-secondary-max: black;
+  --color-dark-yellow: rgb(50, 50, 0);
+  --color-darker-yellow: rgb(40, 40, 0);
+
+  --color-footer: black;
+
+  --color-text: rgb(255, 255, 255);
+  --color-text-a: yellow;
+  --color-text-a-visited: rgb(200, 200, 0);
+  --color-highlight: rgb(220, 220, 220);
+}
+
+/* Etc
+*/
+
+
+.weirdText {
+  color: rgb(0, 0, 0);
+
+  font-size: 3em;
+
+  -webkit-text-fill-color: var(--color-dark-yellow);
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: var(--color-primary-max);
+}
+
+.highlight {
+  color: var(--color-highlight);
+}
+
+body, html, div#root, div.App {
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+  min-height: 100vh;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+a:link {
+  color: var(--color-text-a);
+}
+
+a:visited {
+  color: var(--color-text-a-visited);
+}
+
+address {
+  font-style: normal;
+}
+
 .App {
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* Header
+*/
+
+header {
+  padding: 0 100px 0px 100px;
+  text-align: left;
+}
+
+/* Page
+*/
+
+div#page {
+  display: flex;
+  flex-grow: 1;
+  
+  padding: 5px 100px 0px 100px;
+
+  flex-direction: column;
+}
+
+div#page > * {
+  color: var(--color-primary);
+}
+
+div#top {
+  display: flex;
+
+  flex-direction: row;
+}
+
+div#left {
+  max-width: 80%;
+  width: 65%;
+  margin-right: 5%;
+}
+
+div#right {
+  
+  min-width: 30%;
+
+  min-height: 100px;
+  max-height: 300px;
+
+  padding-bottom: 10px;
+
+  border: 3px solid var(--color-primary);
+  border-radius: 5px;
+
+  background-color: var(--color-darker-yellow);
+}
+
+div#right > div {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+/* Footer
+*/
+
+footer {
+  display: flex;
+  flex-direction: row;
+  
+  flex-wrap: wrap; 
+
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 60px 50px 20px 50px;
+
+  min-height: 120px;
+
+  background-image: linear-gradient(var(--color-secondary), var(--color-footer), var(--color-footer));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+footer > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  border: 3px var(--color-primary) solid;
+  background-color: var(--color-darker-yellow);
+
+  padding: 10px 20px 15px 20px;
+  margin: 5px;
+
+  border-radius: 5px;
+
+  width: fit-content;
+  min-width: 180px;
+  max-width: 500px;
+
+  height: 80px;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.discord, .twitter, .mail, .algo, .github {
+  flex-grow: 1;
+
+  margin: 5px 0 5px 0;
+
+  width: 25px;
+  height: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.algo {
+  margin: 0;
+}
+
+.pinnedTweet {
+  padding: 20px;
+  justify-content: start;
 }
