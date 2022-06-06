@@ -11,10 +11,16 @@
 
   --color-footer: black;
 
+  --bg-entry: rgb(40, 40, 40);
+
   --color-text: rgb(255, 255, 255);
   --color-text-a: yellow;
   --color-text-a-visited: rgb(200, 200, 0);
   --color-highlight: rgb(220, 220, 220);
+
+  --border: 3px var(--color-primary) solid;
+  --border-entry: 3px var(--color-text) solid;
+  --border-radius: 5px;
 }
 
 /* Etc
@@ -101,17 +107,61 @@ div#left {
   margin-right: 5%;
 }
 
+div#left > span > button {
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
+
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-dark-yellow);
+  color: var(--color-text);
+
+  cursor: pointer;
+}
+
+div#blogList {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+div.entry {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 10px;
+
+  width: fit-content;
+  padding: 15px 20px 20px 20px;
+  
+  min-height: 50px;
+  max-height: 500px;
+
+  border: var(--border-entry);
+  border-radius: var(--border-radius);
+
+  color: var(--color-text);
+  background-color: var(--bg-entry);
+}
+
+div.entry > h3 {
+  margin: 0 0 5px 0;
+}
+
 div#right {
   
-  min-width: 30%;
+  min-width: 25%;
 
-  min-height: 100px;
-  max-height: 300px;
+  height: fit-content;
+  min-height: 125px;
+
+  flex-wrap: 1;
 
   padding-bottom: 10px;
 
-  border: 3px solid var(--color-primary);
-  border-radius: 5px;
+  border: var(--border);
+  border-radius: var(--border-radius);
 
   background-color: var(--color-darker-yellow);
 }
@@ -145,13 +195,13 @@ footer > div {
   display: flex;
   flex-direction: column;
 
-  border: 3px var(--color-primary) solid;
+  border: var(--border);
+  border-radius: var(--border-radius);
+
   background-color: var(--color-darker-yellow);
 
   padding: 10px 20px 15px 20px;
   margin: 5px;
-
-  border-radius: 5px;
 
   width: fit-content;
   min-width: 180px;
@@ -183,4 +233,26 @@ footer > div {
 .pinnedTweet {
   padding: 20px;
   justify-content: start;
+}
+
+.hidden {
+  display: none;
+}
+
+.animate {
+  animation-name: buttonAnimation;
+  animation-duration: 4s;
+}
+
+@keyframes buttonAnimation {
+  from {
+    opacity: 0;
+    background-color: var(--color-darker-yellow);
+  }
+
+  to {
+    opacity: 1;
+    background-color: var(--color-dark-yellow);
+  }
+  
 }
