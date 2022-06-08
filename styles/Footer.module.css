@@ -1,0 +1,16 @@
+.discord,
+.twitter,
+.mail,
+.algo,
+.github {
+    flex-grow: 1;
+
+    margin: 5px 0 5px 0;
+
+    width: 25px;
+    height: 25px;
+}
+
+.algo {
+    margin: 0;
+}
