@@ -1,28 +1,3 @@
-:root {
-    --color-primary: rgb(200, 200, 0);
-    --color-primary-middle: rgb(235, 235, 0);
-    --color-primary-max: yellow;
-    --color-primary-transparent: rgba(200, 200, 0, 0.75);
-
-    --color-secondary: rgb(15, 15, 20);
-    --color-secondary-max: black;
-    --color-dark-yellow: rgb(50, 50, 0);
-    --color-darker-yellow: rgb(40, 40, 0);
-
-    --color-footer: black;
-
-    --bg-entry: rgb(40, 40, 40);
-
-    --color-text: rgb(255, 255, 255);
-    --color-text-a: yellow;
-    --color-text-a-visited: rgb(200, 200, 0);
-    --color-highlight: rgb(220, 220, 220);
-
-    --border: 3px var(--color-primary) solid;
-    --border-entry: 3px var(--color-text) solid;
-    --border-radius: 5px;
-}
-
 /* Etc
 */
 
@@ -135,7 +110,9 @@ div.entry {
     flex-grow: 1;
     margin-bottom: 10px;
 
-    width: fit-content;
+    width: 400px;
+    word-wrap: break-word;
+
     padding: 15px 20px 20px 20px;
 
     min-height: 50px;
@@ -148,8 +125,32 @@ div.entry {
     background-color: var(--bg-entry);
 }
 
-div.entry>h3 {
+div.entry > div > h3 {
     margin: 0 0 5px 0;
+
+    padding: 0 20px 5px 0;
+    border-bottom: 1px var(--color-text) solid;
+}
+
+div.entry > div {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+div.entry > div > button {
+    width: fit-content;
+
+    padding: 0 10px 0 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-bottom: 1px tomato solid;
+    
+    cursor: pointer;
+
+    color: tomato;
+    background-color: transparent;
 }
 
 div#right {

@@ -22,7 +22,6 @@ export default function Page({ children, pinnedTweet }) {
 
     function handleBlogButton() {
         setState((prev) => ({ ...prev, isBlogClicked: true }));
-        console.log(state);
     }
 
     return <div id="page">
@@ -33,6 +32,11 @@ export default function Page({ children, pinnedTweet }) {
                         <Typewriter
                             onInit={handleTypeWriter}
                         />
+
+                        {/*
+                            Yes, i know its annoying. Use this code with tampermonkey for development.
+                            document.querySelector(".hidden").className = "";
+                        */}
 
                         <button className={isTyping ? "hidden" : "animate"}
                             onClick={handleBlogButton}

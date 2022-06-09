@@ -1,0 +1,117 @@
+/*
+    Top level Container
+*/
+
+.createEntry {
+    display: flex;
+
+    border: var(--border-entry);
+    border-radius: var(--border-radius);
+
+    color: var(--color-text);
+    background-color: var(--bg-entry);
+    
+    margin-bottom: 10px;
+    min-height: 50px;
+
+    flex-direction: column;
+
+    padding: 10px;
+}
+
+.notification {
+    margin-top: 10px;
+}
+
+.success {
+    width: fit-content;
+
+    padding: 5px 20px 5px 20px;
+    border-radius: var(--border-radius);
+
+    color: rgb(129, 255, 142);
+    background-color: rgb(56, 76, 56);
+
+}
+
+.animate {
+    animation-name: buttonAnimation;
+    animation-duration: 2.5s;
+}
+
+@keyframes buttonAnimation {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+/*
+    Container
+*/
+
+.container {
+    flex-grow: 10;
+    display: flex;
+}
+
+.button {
+    flex-grow: 1;
+    margin-left: 10px;
+
+    border: 2px rgb(70, 70, 70) solid;
+    border-radius: var(--border-radius);
+
+    color: var(--color-text);
+    background-color: rgb(80, 80, 80);
+}
+
+.button:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+.button:active {
+    background-color: rgb(60, 60, 60);
+}
+
+/*
+    Text Container
+*/
+
+.textContainer {
+    flex-direction: column;
+    
+    flex-grow: 10;
+    display: flex;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.input,
+.textarea {
+    padding: 10px;
+
+    color: var(--color-text);
+    background-color: transparent;
+
+    border: 1px rgb(100, 100, 100) solid;
+    border-radius: var(--border-radius);
+}
+
+.textarea {
+    min-height: 48px;
+    resize: vertical;
+}
+
+.textarea:focus, .input:focus {
+    border: 1px rgb(110, 110, 110) solid;
+    background-color: rgba(255, 255, 255, .008);
+    
+    outline: none;
+}

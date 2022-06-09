@@ -1,5 +1,5 @@
-import React from "react";
-import Head from 'next/head'
+import React, { useEffect } from "react";
+import { useRouter } from 'next/router'
 
 import { Context, useContext } from "../components/context.jsx";
 
@@ -11,34 +11,21 @@ import Footer from "../components/footer";
 
 function App() {
   let [state, setState] = useContext(Context);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (state.isBlogClicked) router.push("/blog")
+  }, [state.isBlogClicked])
 
   return (
+    <div className='App'>
+      <Header />
 
-    <div>
+      <Page pinnedTweet={state.pinnedTweet}>
 
-      {/* Head */}
+      </Page>
 
-      <Head>
-        <title>Batıkan Kutluer</title>
-
-        <meta charset="utf-8" />
-        <meta name="description" content="Kendi websitem." />
-        <meta name="author" content="Batıkan Kutluer" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="theme-color" content="#000000" />
-      </Head>
-
-      {/* App */}
-
-      <div className='App'>
-        <Header />
-
-        <Page pinnedTweet={state.pinnedTweet}>
-          {!state.isBlogClicked || <Blog />}
-        </Page>
-
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
