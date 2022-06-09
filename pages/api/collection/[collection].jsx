@@ -63,7 +63,7 @@ async function handlePOST(req, res) {
 async function handleDELETE(req, res) {
     let { token, id, collection } = req.query;
 
-    if (token === process.env.pass) {
+    if (token === process.env.PASS) {
         const col = db.collection(collection);
 
         if (!id) return res.send("Id required.");
