@@ -3,8 +3,6 @@ import { useRouter } from 'next/router'
 
 import { Context, useContext } from "../components/context.jsx";
 
-import Blog from "../components/blog";
-
 import Header from "../components/header";
 import Page from "../components/page";
 import Footer from "../components/footer";
