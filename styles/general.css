@@ -160,6 +160,8 @@ div.entry > span {
     overflow: scroll;
     overflow-x: hidden;
 
+    white-space: pre-wrap;
+
     padding-right: 5px;
 }
 
