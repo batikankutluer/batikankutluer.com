@@ -62,7 +62,7 @@ export default function Footer() {
                 src="/email.png" />
             <span>E-Posta: </span>
 
-            <a href="mailto:batikankutluermain@gmail.com">Batıkan Kutluer</a>
+            <a href="mailto:batikankutluer@proton.me">Batıkan Kutluer</a>
         </div>
 
     </footer >
