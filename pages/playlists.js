@@ -54,7 +54,7 @@ function Track({ track }) {
                 pathname: '/[playlist]',
                 query: { playlist: id }
             }}
-            as={`/${id}`} className={css.send}>Playlist'e git.</Link>
+            as={`/${id}`} className={css.send}>Playlist&lsquo;e git.</Link>
     </div >
 }
 
