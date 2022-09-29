@@ -28,7 +28,7 @@ export default function Page({ children, pinnedTweet }) {
         <div id="top">
             <div id="left">
                 {
-                    state.isBlogClicked ? children : <span>
+                    state.isBlogClicked || state ? children : <span>
                         <Typewriter
                             onInit={handleTypeWriter}
                         />
@@ -45,16 +45,18 @@ export default function Page({ children, pinnedTweet }) {
                 }
             </div>
 
-            <div id="right">
+            {state.playlist || <div id="right">
 
                 <div className="logoContainer pinnedTweet">
-                    <span style={{ fontSize: "2em", marginBottom: 10 }}>Sabitlenen Tweetim:</span>
-                    <div className="highlight" style={{ fontWeight: "bold", fontSize: "1.3em" }}>
-                        {pinnedTweet}
+                    <div>
+                        <span style={{ fontSize: "2em", marginBottom: 10 }}>Sabitlenen Tweetim:</span>
+                        <div className="highlight" style={{ fontWeight: "bold", fontSize: "1.3em" }}>
+                            {pinnedTweet}
+                        </div>
                     </div>
                 </div>
 
-            </div>
+            </div>}
         </div>
 
         <div id="bottom"></div>

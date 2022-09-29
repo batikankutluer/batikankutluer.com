@@ -6,7 +6,7 @@ export default function Header() {
     return <header>
         <h1 className="weirdText">
             {
-                state.isBlogClicked ? "Blogum" : "Selamlar!"
+                state.playlist ? "" : state.isBlogClicked ? "Blogum" : "Selamlar!"
             }
         </h1>
     </header>

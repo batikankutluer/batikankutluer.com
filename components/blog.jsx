@@ -3,6 +3,8 @@ import { Context, useContext } from "./context";
 
 import CreateEntry from "./createEntry";
 
+let link = (_) => _.replace(/(www|http:|https:)+[^\s]+[\w]/g, (x) => `<a href="${x}">${x}</a>`)
+
 function Blog() {
     let [state, setState] = useContext(Context);
 
@@ -42,7 +44,7 @@ function Blog() {
                         title={title}
                         key={n}
                     >
-                        {context}
+                        {link(context)}
                     </Entry>
                 })
             }
